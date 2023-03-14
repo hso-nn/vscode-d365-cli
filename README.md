@@ -1,6 +1,6 @@
 # VScode Extension for HSO D365-CLI
 
-This is a VS Code extensions for the HSO D365-CLI
+This is a VS Code extension for the HSO D365-CLI
 
 ## D365-CLI
 
@@ -11,6 +11,6 @@ Click [here](https://github.com/hso-nn/d365-cli) for more info.
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.1
 
 Initial release of hso-d365 cli
