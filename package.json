@@ -1,0 +1,122 @@
+{
+  "icon": "img/logo.png",
+  "name": "hso-d365",
+  "displayName": "HSO D365 CLI Utility",
+  "description": "A simple extension to make it easier to use the commands of HSO-D365 CLI, an open source framework for developing Webresources and PCF Controls",
+  "version": "1.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hso-nn/vscode-d365-cli.git"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hso-d365.install",
+        "title": "hso-d365: CLI Install"
+      },
+      {
+        "command": "hso-d365.updateCLI",
+        "title": "hso-d365: CLI Update"
+      },
+      {
+        "command": "hso-d365.version",
+				"title": "hso-d365: CLI Version"
+      },
+      {
+        "command": "hso-d365.newProject",
+				"title": "hso-d365: New Project"
+      },
+      {
+        "command": "hso-d365.generateEntity",
+				"title": "hso-d365: Generate Entity"
+      },
+      {
+        "command": "hso-d365.generateWebresource",
+				"title": "hso-d365: Generate Webresource"
+      },
+      {
+        "command": "hso-d365.generateModel",
+				"title": "hso-d365: Generate Model"
+      },
+      {
+        "command": "hso-d365.generateGlobalOptionSets",
+				"title": "hso-d365: Generate GlobalOptionSets"
+      },
+      {
+        "command": "hso-d365.generateCustomApis",
+				"title": "hso-d365: Generate CustomApis"
+      },
+      {
+        "command": "hso-d365.generateEnvironmentVariable",
+				"title": "hso-d365: Generate EnvironmentVariable"
+      },
+      {
+        "command": "hso-d365.generateLicenseValidator",
+				"title": "hso-d365: Generate LicenseValidator"
+      },
+      {
+        "command": "hso-d365.regenerate",
+        "title": "hso-d365: Regenerate"
+      },
+      {
+        "command": "hso-d365.extractTranslations",
+        "title": "hso-d365: Extract Translations"
+      },    
+      {
+        "command": "hso-d365.lint",
+				"title": "hso-d365: Lint"
+      },  
+      {
+        "command": "hso-d365.build",
+				"title": "hso-d365: Build"
+      },
+      {
+        "command": "hso-d365.deploy",
+				"title": "hso-d365: Deploy"
+      },
+      {
+        "command": "hso-d365.update",
+				"title": "hso-d365: Update"
+      },
+      {
+        "command": "hso-d365.setFormCustomizable",
+				"title": "hso-d365: Set Form Customizable"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.76.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "@vscode/test-electron": "^2.2.3"
+  }
+}
