@@ -4,6 +4,7 @@
   "displayName": "HSO D365 CLI Utility",
   "description": "A simple extension to make it easier to use the commands of HSO-D365 CLI, an open source framework for developing Webresources and PCF Controls",
   "version": "1.0.1",
+  "publisher": "hsoinnovation",
   "engines": {
     "vscode": "^1.76.0"
   },
