@@ -1,24 +1,25 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { MainScreen } from './panels/MainScreen';
 
 async function runTerminalCommand(command: any) {
 	const terminals = vscode.window.terminals;
 	if (!terminals.length) {
 		let terminal = await vscode.window.createTerminal(`HSO D365 CLI Extension`);
 		terminal.show();
-		terminal.sendText(`${command}`)
+		terminal.sendText(`${command}`);
 	} else {
 		terminals.map((a) => {
-			if (a.name == 'HSO D365 CLI Extension') {
+			if (a.name === 'HSO D365 CLI Extension') {
 				a.show();
-				a.sendText(`${command}`)
+				a.sendText(`${command}`);
 				return true;
 			} else {
 				a.show();
-				a.sendText(`${command}`)
+				a.sendText(`${command}`);
 			}
-		})
+		});
 	}
 }
 
@@ -46,7 +47,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 			await runTerminalCommand(`yarn global add @hso/d365-cli`);
 		}
-		if (preferences == null) return;
+		if (preferences === null) {
+			return;
+		}
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand('hso-d365.updateCLI', async function () {
@@ -65,7 +68,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 			await runTerminalCommand(`yarn global add @hso/d365-cli@latest`);
 		}
-		if (preferences == null) return;
+		if (preferences === null) { 
+			return;
+		}
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand('hso-d365.version', async function () {
@@ -78,7 +83,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const options: vscode.InputBoxOptions = {
 			
 			title: 'Whats is the name of the new project?'
-		}
+		};
 		const input: string | undefined = await vscode.window.showInputBox(options);
 		
 		if(input !== undefined) {
@@ -92,7 +97,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const options: vscode.InputBoxOptions = {
 			
 			title: 'Whats is the name of the new Entity?'
-		}
+		};
 		const input: string | undefined = await vscode.window.showInputBox(options);
 		
 		if(input !== undefined) {
@@ -113,7 +118,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const options: vscode.InputBoxOptions = {
 			
 			title: 'Whats is the name of the new Webresource?'
-		}
+		};
 		const input: string | undefined = await vscode.window.showInputBox(options);
 		
 		if(input !== undefined) {
@@ -125,7 +130,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const options: vscode.InputBoxOptions = {
 			
 			title: 'Whats is the name of the new Model?'
-		}
+		};
 		const input: string | undefined = await vscode.window.showInputBox(options);
 		
 		if(input !== undefined) {
@@ -223,6 +228,10 @@ export function activate(context: vscode.ExtensionContext) {
 		if(command !== undefined) {
 			await runTerminalCommand(command);
 		}
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand('hso-d365.MainScreen', async function () {
+		MainScreen.render(context.extensionUri);
 	}));
 
 

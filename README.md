@@ -14,3 +14,9 @@ Click [here](https://github.com/hso-nn/d365-cli) for more info.
 ### 1.0.1
 
 Initial release of hso-d365 cli
+
+### 1.1.0
+
+Added webview menu structure reflecting the hso-d365 cli. Call it in command bar by "hso-d365: Main" of use keybing "ctrl-alt-h"
+
+![ESLint Dialog](images/overview.png)
